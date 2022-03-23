@@ -1,0 +1,47 @@
+div#app{
+    max-width: 300px;
+    max-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+div#app > div.field {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+div#app > div.field:nth-child(-1n + 6){
+    border-bottom: 2px solid black;
+}
+div#app > div.field:nth-child(3n + 2){
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+div#app > div.field.cross,
+div#app > div.field.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+div#app > div.field.cross:after,
+div#app > div.field.cross:before {
+    content: '';
+    background-color: black;
+    width: 2px;
+    height: 80px;
+    position: absolute;
+}
+div#app > div.field.cross:after {
+    transform: rotate(45deg);
+}
+div#app > div.field.cross:before {
+    transform: rotate(-45deg);
+}
+
+div#app > div.field.circle:before { 
+    content: '';
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
